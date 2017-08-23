@@ -39,11 +39,11 @@ BuildRequires:  python-setuptools
 BuildRequires:  git
 BuildRequires:  openstack-macros
 
-Requires:   python-tempest >= 1:12.2.0
-Requires:   python-pbr
+Requires:   python-tempest >= 12.1.0
+Requires:   python-pbr >= 2.0.0
 Requires:   python-cryptography
-Requires:   python-oslo-config
-Requires:   python-oslo-log
+Requires:   python-oslo-config >= 2:4.0.0
+Requires:   python-oslo-log >= 3.22.0
 Requires:   python-six
 
 %description -n python2-%{service}-tests-tempest
