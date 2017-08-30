@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_1f20aa48",
+        "filename": "python-barbican-tests-tempest.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 113
+      },
+      "writtenOn": "2017-08-30T15:34:23Z",
+      "side": 1,
+      "message": "This has to be different if it\u0027s for DLRN (%{module}) or CBS (%{plugin}), see my previous comment",
+      "revId": "d6db559ea805df64b3f021cb01a052268fefb3e5",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
