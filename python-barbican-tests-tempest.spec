@@ -1,10 +1,14 @@
+%{!?upstream_version: %global upstream_version %{commit}}
+%global commit 95a7322ccdb1ae244093fa38e81c0ad730b69ef0
+%global shortcommit %(c=%{commit}; echo ${c:0:7})
+# DO NOT REMOVE ALPHATAG
+%global alphatag .%{shortcommit}git
+
 %global service barbican
 %global plugin barbican-tempest-plugin
 %global module barbican_tempest_plugin
 # Disabling doc as it is not available
 %global with_doc 0
-
-%{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
 %if 0%{?fedora}
 %global with_python3 1
@@ -17,13 +21,13 @@ these tests into tempest.
 
 
 Name:       python-%{service}-tests-tempest
-Version:    XXX
-Release:    XXX
+Version:    0.0.1
+Release:    0.1%{?alphatag}%{?dist}
 Summary:    Tempest plugin for the barbican project.
 License:    ASL 2.0
 URL:        https://git.openstack.org/cgit/openstack/%{plugin}/
 
-Source0:    http://tarballs.openstack.org/%{plugin}/%{plugin}-%{upstream_version}.tar.gz
+Source0:    https://github.com/openstack/%{plugin}/archive/%{commit}.tar.gz#/%{plugin}-%{shortcommit}.tar.gz
 
 BuildArch:  noarch
 
@@ -80,7 +84,7 @@ Requires:   python3-six
 %endif
 
 %prep
-%autosetup -n %{module}-%{upstream_version} -S git
+%autosetup -n %{plugin}-%{upstream_version} -S git
 
 # Let's handle dependencies ourseleves
 %py_req_cleanup
@@ -127,3 +131,5 @@ rm -rf doc/build/html/.{doctrees,buildinfo}
 %endif
 
 %changelog
+* Wed Aug 30 2017 Chandan Kumar <chkumar@redhat.com> 0.0.1-0.1.95a7322cgit
+- Update to pre-release 0.0.1 (95a7322ccdb1ae244093fa38e81c0ad730b69ef0)
