@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_9f373ab0",
+        "filename": "python-barbican-tests-tempest.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 113
+      },
+      "writtenOn": "2017-08-30T15:19:02Z",
+      "side": 1,
+      "message": "The directory name for the upstream github tarball is \"barbican-tempest-plugin\" instead of \"barbican_tempest_plugin\". We\u0027ll have to do something like https://github.com/rdo-packages/puppet-rabbitmq-distgit/blob/pike-rdo/puppet-rabbitmq.spec#L8-L12",
+      "range": {
+        "startLine": 87,
+        "startChar": 13,
+        "endLine": 87,
+        "endChar": 24
+      },
+      "revId": "9732c282473637347bf2741c672550050515b97b",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
