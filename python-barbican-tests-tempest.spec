@@ -46,11 +46,11 @@ BuildRequires:  python-setuptools
 BuildRequires:  git
 BuildRequires:  openstack-macros
 
-Requires:   python-tempest >= 12.1.0
-Requires:   python-pbr >= 2.0.0
+Requires:   python-tempest >= 1:18.0.0
+Requires:   python-pbr >= 3.1.1
 Requires:   python-cryptography
-Requires:   python-oslo-config >= 2:4.0.0
-Requires:   python-oslo-log >= 3.22.0
+Requires:   python-oslo-config >= 2:5.2.0
+Requires:   python-oslo-log >= 3.36.0
 Requires:   python-six
 
 %description -n python2-%{service}-tests-tempest
@@ -75,7 +75,7 @@ BuildRequires:  python3-devel
 BuildRequires:  python3-pbr
 BuildRequires:  python3-setuptools
 
-Requires:   python3-tempest >= 1:12.2.0
+Requires:   python3-tempest >= 1:18.0.0
 Requires:   python3-pbr
 Requires:   python3-cryptography
 Requires:   python3-oslo-config
