@@ -39,12 +39,12 @@ BuildRequires:  python2-devel
 BuildRequires:  python2-pbr
 BuildRequires:  python2-setuptools
 
-Requires:   python2-tempest >= 1:17.2.0
-Requires:   python2-pbr >= 2.0.0
+Requires:   python2-tempest >= 1:18.0.0
+Requires:   python2-pbr >= 3.1.1
 Requires:   python2-cryptography
-Requires:   python2-oslo-config >= 2:4.0.0
-Requires:   python2-oslo-log >= 3.30.0
-Requires:   python2-six >= 1.9.0
+Requires:   python2-oslo-config >= 2:5.2.0
+Requires:   python2-oslo-log >= 3.36.0
+Requires:   python2-six >= 1.10.0
 
 %description -n python2-%{service}-tests-tempest
 %{common_desc}
@@ -68,12 +68,12 @@ BuildRequires:  python3-devel
 BuildRequires:  python3-pbr
 BuildRequires:  python3-setuptools
 
-Requires:   python3-tempest >= 1:17.2.0
-Requires:   python3-pbr >= 2.0.0
+Requires:   python3-tempest >= 1:18.0.0
+Requires:   python3-pbr >= 3.1.1
 Requires:   python3-cryptography
-Requires:   python3-oslo-config >= 2:4.0.0
-Requires:   python3-oslo-log >= 3.30.0
-Requires:   python3-six >= 1.9.0
+Requires:   python3-oslo-config >= 2:5.2.0
+Requires:   python3-oslo-log >= 3.36.0
+Requires:   python3-six >= 1.10.0
 
 %description -n python3-%{service}-tests-tempest
 %{common_desc}
