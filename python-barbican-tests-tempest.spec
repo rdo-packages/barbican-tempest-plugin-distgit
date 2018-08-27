@@ -1,8 +1,4 @@
-%{!?upstream_version: %global upstream_version %{commit}}
-%global commit b8bf147bdcdd33f3ad276ca8815fd253ec9b24af
-%global shortcommit %(c=%{commit}; echo ${c:0:7})
-# DO NOT REMOVE ALPHATAG
-%global alphatag .%{shortcommit}git
+%{!?upstream_version: %global upstream_version %{version}}
 
 %global service barbican
 %global plugin barbican-tempest-plugin
@@ -14,12 +10,6 @@
 %global with_python3 1
 %endif
 
-%if 0%{?dlrn}
-%define tarsources %module
-%else
-%define tarsources %plugin
-%endif
-
 %global common_desc \
 This project defines a tempest plugin containing tests used to verify the \
 functionality of a barbican installation. The plugin will automatically load \
@@ -27,13 +17,13 @@ these tests into tempest.
 
 
 Name:       python-%{service}-tests-tempest
-Version:    0.0.1
-Release:    0.3%{?alphatag}%{?dist}
+Version:    0.1.0
+Release:    1%{?dist}
 Summary:    Tempest plugin for the barbican project.
 License:    ASL 2.0
 URL:        https://git.openstack.org/cgit/openstack/%{plugin}/
 
-Source0:    https://github.com/openstack/%{plugin}/archive/%{commit}.tar.gz#/%{plugin}-%{shortcommit}.tar.gz
+Source0:    http://tarballs.openstack.org/%{plugin}/%{module}-%{upstream_version}.tar.gz
 
 BuildArch:  noarch
 BuildRequires:  git
@@ -90,7 +80,7 @@ Requires:   python3-six >= 1.10.0
 %endif
 
 %prep
-%autosetup -n %{tarsources}-%{upstream_version} -S git
+%autosetup -n %{module}-%{upstream_version} -S git
 
 # Let's handle dependencies ourseleves
 %py_req_cleanup
@@ -137,5 +127,8 @@ rm -rf doc/build/html/.{doctrees,buildinfo}
 %endif
 
 %changelog
+* Mon Aug 27 2018 RDO <dev@lists.rdoproject.org> 0.1.0-1
+- Update to 0.1.0
+
 * Thu Aug 23 2018 Chandan Kumar <chkumar@redhat.com> 0.0.1-0.3.b8bf147bgit
 - Update to pre-release 0.0.1 (b8bf147bdcdd33f3ad276ca8815fd253ec9b24af)
