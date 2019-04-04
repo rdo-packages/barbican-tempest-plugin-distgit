@@ -24,8 +24,8 @@ these tests into tempest.
 
 
 Name:       python-%{service}-tests-tempest
-Version:    XXX
-Release:    XXX
+Version:    0.2.0
+Release:    1%{?dist}
 Summary:    Tempest plugin for the barbican project.
 License:    ASL 2.0
 URL:        https://git.openstack.org/cgit/openstack/%{plugin}/
@@ -101,3 +101,6 @@ rm -rf doc/build/html/.{doctrees,buildinfo}
 %endif
 
 %changelog
+* Thu Apr 04 2019 RDO <dev@lists.rdoproject.org> 0.2.0-1
+- Update to 0.2.0
+
