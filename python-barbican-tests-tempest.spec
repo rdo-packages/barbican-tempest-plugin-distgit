@@ -31,6 +31,8 @@ License:    ASL 2.0
 URL:        https://git.openstack.org/cgit/openstack/%{plugin}/
 
 Source0:    http://tarballs.openstack.org/%{plugin}/%{module}-%{upstream_version}.tar.gz
+# This patch reverts the removal of six, readding Python2 compatibility
+Patch0001:  0001-Revert-Remove-six.patch
 
 BuildArch:  noarch
 BuildRequires:  git

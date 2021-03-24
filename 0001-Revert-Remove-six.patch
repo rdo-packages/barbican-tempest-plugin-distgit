@@ -1,0 +1,105 @@
+From 8b217f28e149ab1fa00171d54aa84f53f065c710 Mon Sep 17 00:00:00 2001
+From: Luigi Toscano <ltoscano@redhat.com>
+Date: Wed, 24 Mar 2021 17:33:45 +0100
+Subject: [PATCH] Revert "Remove six"
+
+Restore six to provide again Python2 compatibility.
+
+This reverts commit 0525790271114323c9028e24777218823e613ec3.
+---
+ .../services/key_manager/json/consumer_client.py               | 2 +-
+ .../services/key_manager/json/container_client.py              | 2 +-
+ .../services/key_manager/json/order_client.py                  | 2 +-
+ .../services/key_manager/json/quota_client.py                  | 2 +-
+ .../services/key_manager/json/secret_client.py                 | 3 ++-
+ requirements.txt                                               | 1 +
+ 6 files changed, 7 insertions(+), 5 deletions(-)
+
+diff --git a/barbican_tempest_plugin/services/key_manager/json/consumer_client.py b/barbican_tempest_plugin/services/key_manager/json/consumer_client.py
+index 37fbb86..e0ed5a5 100644
+--- a/barbican_tempest_plugin/services/key_manager/json/consumer_client.py
++++ b/barbican_tempest_plugin/services/key_manager/json/consumer_client.py
+@@ -15,7 +15,7 @@
+ 
+ import json
+ 
+-from urllib import parse as urllib
++from six.moves.urllib import parse as urllib
+ 
+ from tempest import config
+ from tempest.lib.common import rest_client
+diff --git a/barbican_tempest_plugin/services/key_manager/json/container_client.py b/barbican_tempest_plugin/services/key_manager/json/container_client.py
+index 7e24396..7bacf03 100644
+--- a/barbican_tempest_plugin/services/key_manager/json/container_client.py
++++ b/barbican_tempest_plugin/services/key_manager/json/container_client.py
+@@ -15,7 +15,7 @@
+ 
+ import json
+ 
+-from urllib import parse as urllib
++from six.moves.urllib import parse as urllib
+ 
+ from tempest import config
+ from tempest.lib.common import rest_client
+diff --git a/barbican_tempest_plugin/services/key_manager/json/order_client.py b/barbican_tempest_plugin/services/key_manager/json/order_client.py
+index d7a3945..85455b7 100644
+--- a/barbican_tempest_plugin/services/key_manager/json/order_client.py
++++ b/barbican_tempest_plugin/services/key_manager/json/order_client.py
+@@ -15,7 +15,7 @@
+ 
+ import json
+ 
+-from urllib import parse as urllib
++from six.moves.urllib import parse as urllib
+ 
+ from tempest import config
+ from tempest.lib.common import rest_client
+diff --git a/barbican_tempest_plugin/services/key_manager/json/quota_client.py b/barbican_tempest_plugin/services/key_manager/json/quota_client.py
+index ba09b56..f874648 100644
+--- a/barbican_tempest_plugin/services/key_manager/json/quota_client.py
++++ b/barbican_tempest_plugin/services/key_manager/json/quota_client.py
+@@ -15,7 +15,7 @@
+ 
+ import json
+ 
+-from urllib import parse as urllib
++from six.moves.urllib import parse as urllib
+ 
+ from tempest import config
+ from tempest.lib.common import rest_client
+diff --git a/barbican_tempest_plugin/services/key_manager/json/secret_client.py b/barbican_tempest_plugin/services/key_manager/json/secret_client.py
+index 8c1fa16..4958c25 100644
+--- a/barbican_tempest_plugin/services/key_manager/json/secret_client.py
++++ b/barbican_tempest_plugin/services/key_manager/json/secret_client.py
+@@ -15,6 +15,7 @@
+ 
+ 
+ import json
++import six
+ 
+ from tempest import config
+ from tempest.lib.common import rest_client
+@@ -28,7 +29,7 @@ class SecretClient(rest_client.RestClient):
+         if 'name' not in kwargs:
+             kwargs['name'] = data_utils.rand_name("tempest-sec")
+ 
+-        if 'payload' in kwargs and type(kwargs['payload']) is bytes:
++        if 'payload' in kwargs and type(kwargs['payload']) is six.binary_type:
+             kwargs['payload'] = kwargs['payload'].decode('utf-8')
+ 
+         post_body = kwargs
+diff --git a/requirements.txt b/requirements.txt
+index 67ae150..761711f 100644
+--- a/requirements.txt
++++ b/requirements.txt
+@@ -4,6 +4,7 @@
+ 
+ pbr!=2.1.0,>=2.0.0 # Apache-2.0
+ 
++six>=1.10.0 # MIT
+ tempest>=17.1.0 # Apache-2.0
+ cryptography>=2.1 # BSD/Apache-2.0
+ 
+-- 
+2.30.2
+
