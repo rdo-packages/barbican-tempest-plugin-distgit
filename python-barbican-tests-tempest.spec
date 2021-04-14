@@ -106,3 +106,4 @@ rm -rf doc/build/html/.{doctrees,buildinfo}
 * Mon Sep 30 2019 RDO <dev@lists.rdoproject.org> 0.3.0-1
 - Update to 0.3.0
 
+# REMOVEME: error caused by commit https://opendev.org/openstack/barbican-tempest-plugin/commit/a226433e778d4996b8c4f4e8fee9c3c3b8ea3ad4
