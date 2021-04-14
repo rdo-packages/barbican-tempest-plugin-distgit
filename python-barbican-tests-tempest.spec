@@ -24,7 +24,7 @@ these tests into tempest.
 
 
 Name:       python-%{service}-tests-tempest
-Version:    0.3.0
+Version:    1.2.1
 Release:    1%{?dist}
 Summary:    Tempest plugin for the barbican project.
 License:    ASL 2.0
@@ -103,6 +103,9 @@ rm -rf doc/build/html/.{doctrees,buildinfo}
 %endif
 
 %changelog
+* Wed Apr 14 2021 RDO <dev@lists.rdoproject.org> 1.2.1-1
+- Update to 1.2.1
+
 * Mon Sep 30 2019 RDO <dev@lists.rdoproject.org> 0.3.0-1
 - Update to 0.3.0
 
