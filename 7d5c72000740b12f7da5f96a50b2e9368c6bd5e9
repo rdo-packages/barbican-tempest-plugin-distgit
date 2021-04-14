@@ -1,0 +1,9 @@
+Code-Review+2: Yatin Karel <ykarel@redhat.com>
+Code-Review+2: Alfredo Moralejo <amoralej@redhat.com>
+Verified+2: Alfredo Moralejo <amoralej@redhat.com>
+Workflow+1: Alfredo Moralejo <amoralej@redhat.com>
+Submitted-by: Alfredo Moralejo <amoralej@redhat.com>
+Submitted-at: Wed, 14 Apr 2021 14:47:01 +0000
+Reviewed-on: https://review.rdoproject.org/r/c/openstack/barbican-tempest-plugin-distgit/+/32725
+Project: openstack/barbican-tempest-plugin-distgit
+Branch: refs/heads/train-rdo
