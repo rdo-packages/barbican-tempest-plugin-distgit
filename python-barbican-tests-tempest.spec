@@ -1,5 +1,5 @@
 %{!?sources_gpg: %{!?dlrn:%global sources_gpg 1} }
-%global sources_gpg_sign 0x4c29ff0e437f3351fd82bdf47c5a3bc787dc7035
+%global sources_gpg_sign 0x01527a34f0d0080f8a5db8d6eb6c5df21b4b6363
 %global service barbican
 %global plugin barbican-tempest-plugin
 %global module barbican_tempest_plugin
@@ -15,7 +15,7 @@ these tests into tempest.
 
 
 Name:       python-%{service}-tests-tempest
-Version:    1.5.0
+Version:    1.6.0
 Release:    1%{?dist}
 Summary:    Tempest plugin for the barbican project.
 License:    ASL 2.0
@@ -106,6 +106,9 @@ rm -rf doc/build/html/.{doctrees,buildinfo}
 %endif
 
 %changelog
+* Fri Apr 08 2022 RDO <dev@lists.rdoproject.org> 1.6.0-1
+- Update to 1.6.0
+
 * Wed Sep 29 2021 RDO <dev@lists.rdoproject.org> 1.5.0-1
 - Update to 1.5.0
 
