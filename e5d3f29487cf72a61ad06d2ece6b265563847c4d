@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2610a885_f0b7a02e",
+        "filename": "python-barbican-tests-tempest.spec",
+        "patchSetId": 4
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 635
+      },
+      "writtenOn": "2023-08-04T12:40:54Z",
+      "side": 1,
+      "message": "-t -e docs",
+      "range": {
+        "startLine": 89,
+        "startChar": 27,
+        "endLine": 89,
+        "endChar": 34
+      },
+      "revId": "e5d3f29487cf72a61ad06d2ece6b265563847c4d",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    }
+  ]
+}
