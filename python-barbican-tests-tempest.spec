@@ -1,5 +1,5 @@
 %{!?sources_gpg: %{!?dlrn:%global sources_gpg 1} }
-%global sources_gpg_sign 0x815AFEC729392386480E076DCC0DFE2D21C023C9
+%global sources_gpg_sign 0x815afec729392386480e076dcc0dfe2d21c023c9
 %global service barbican
 %global plugin barbican-tempest-plugin
 %global module barbican_tempest_plugin
@@ -119,4 +119,5 @@ rm -rf doc/build/html/.{doctrees,buildinfo}
 %changelog
 * Wed Oct 04 2023 RDO <dev@lists.rdoproject.org> 3.0.0-1
 - Update to 3.0.0
+
 
