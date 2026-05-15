@@ -118,3 +118,4 @@ rm -rf doc/build/html/.{doctrees,buildinfo}
 
 %changelog
 
+# REMOVEME: error caused by commit https://opendev.org/openstack/barbican-tempest-plugin/commit/867f18d7886acd6bd658b62854b302c0efc078d6
